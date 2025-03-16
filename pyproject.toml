@@ -1,0 +1,22 @@
+[project]
+name = "owui-pipelines"
+version = "0.1.4"
+description = "Package for OWUI pipelines"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "azure-ai-projects>=1.0.0b7",
+    "azure-ai-resources>=1.0.0b9",
+    "azure-identity>=1.21.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+owui-pipelines = "owui_pipelines.cli.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["owui_pipelines*"]
