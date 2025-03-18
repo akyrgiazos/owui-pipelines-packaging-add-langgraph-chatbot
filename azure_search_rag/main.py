@@ -1,7 +1,7 @@
 import asyncio
 from typing import List, Tuple
 from azure_search_manager import AzureSearchManager, initialize_azure_search
-from rag_chain import RAGChain
+from azure_search_rag.rag_chain import RAGChain
 import argparse
 from tqdm import tqdm
 from langchain.chat_models.base import BaseChatModel
@@ -24,7 +24,7 @@ async def chat_loop(search_manager: AzureSearchManager, llm: BaseChatModel):
     from prompts import system_prompt_template
 
     rag_chain = RAGChain(search_manager=search_manager, chat_model=llm, system_prompt=system_prompt_template)   
-    rag_chain.run()
+    await rag_chain.run()
 
 def initialize():
     search_manager = initialize_azure_search()
