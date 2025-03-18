@@ -9,6 +9,17 @@ dependencies = [
     "azure-ai-resources>=1.0.0b9",
     "azure-identity>=1.21.0",
     "python-dotenv>=1.0.1",
+    "langchain-openai>=0.0.3",
+    "langchain-community>=0.0.10",
+    "langchain-core>=0.1.0",
+    "requests>=2.0.0",
+    "tqdm>=4.0.0",
+    "langchain>=0.1.0",
+    "langgraph>=0.0.24",
+    "azure-mgmt-storage>=22.1.1",
+    "azure-mgmt-search>=9.1.0",
+    "azure-search>=1.0.0b2",
+    "azure-search-documents>=11.5.2",
 ]
 
 [project.scripts]
@@ -19,4 +30,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["owui_pipelines*"]
+include = ["owui_pipelines*", "azure_search_rag*"]
+
+[tool.setuptools.package-data]
+azure_search_rag = ["*.py"]
